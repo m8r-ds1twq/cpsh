@@ -25,6 +25,7 @@ const std::string CodeTemplate::STD_HEADER = "\
 using namespace std;\n";
 
 const std::string CodeTemplate::BOOST_HEADER = "\
+#define BOOST_REGEX_NO_LIB 1\n\
 #include <boost/iterator.hpp>\n\
 #include <boost/array.hpp>\n\
 #include <boost/assert.hpp>\n\
