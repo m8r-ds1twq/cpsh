@@ -41,6 +41,8 @@ const std::string CodeTemplate::BOOST_HEADER = "\
 #include <boost/function.hpp>\n\
 #include <boost/lambda/lambda.hpp>\n\
 #include <boost/lambda/bind.hpp>\n\
+#include <boost/random.hpp>\n\
+#include <boost/regex.hpp>\n\
 \n\
 using namespace boost;\n\
 using namespace boost::lambda;\n\
