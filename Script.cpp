@@ -223,10 +223,10 @@ void Script::compileSource(const std::string& sourcePath,
   bool useMsvc = tool == Deployment::TOOL_MSVC;
   bool isWin = platform == Deployment::PLATFORM_WIN32;
   const std::string cmd =
-    (useMsvc ? "cl -o " : "g++ -o ")
+    (useMsvc ? "cl /EHsc /w /nologo /Fe" : "g++ -o ")
     + exePath +
     (useMsvc ? " /I" : " -I ") +
-    (isWin ? "%BOOST_HOME% " :  "\"$BOOST_HOME\" ") +
+    (isWin ? "\"%BOOST_HOME%\" " :  "\"$BOOST_HOME\" ") +
     sourcePath + " > " + DEFAULT_ERR_FILE;
 //		 + " 2>&1";
   int compileStatus = std::system(cmd.c_str());
