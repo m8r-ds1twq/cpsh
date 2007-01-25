@@ -146,6 +146,11 @@ void Script::compile()
     // We rollback to the last good code
     definitionCode_.str(lastGoodDefinitionCode_.str());
     mainCode_.str(lastGoodMainCode_.str());
+	// Even though the ostringstream is
+	// created to append after each setting,
+	// it does not seem to work on Windows
+	definitionCode_.seekp(0, std::ios_base::end);
+	mainCode_.seekp(0, std::ios_base::end);
     throw;
   }  
 }
